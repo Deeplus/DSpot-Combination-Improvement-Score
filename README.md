@@ -1,2 +1,2 @@
 # DSpot-Combination-Improvement-Score
-CIS
+Combination Improvement Score
