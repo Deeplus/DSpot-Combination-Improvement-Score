@@ -1,6 +1,6 @@
 import linecache
 
-########## obtain individual score #########
+########## obtain the individual score #########
 num_1=""
 num_2=""
 num_3=""
@@ -69,7 +69,7 @@ for i in M:
     if i.isdigit():
         num_11+=i
 
-########## obtain combination score #########
+########## obtain the combination score #########
 combination=linecache.getline(r'/Users/dongzm/PycharmProjects/DSpot_CIS/Combination/MethodAdd+MethodRemove.txt',4)
 for i in combination:
     if i.isdigit():
