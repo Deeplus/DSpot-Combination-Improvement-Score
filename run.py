@@ -1,8 +1,6 @@
-#!/usr/bin/python3
-
 import linecache
 
-########## obtain the individual score #########
+########## obtain individual score #########
 num_1=""
 num_2=""
 num_3=""
@@ -15,6 +13,8 @@ num_9=""
 num_10=""
 num_11=""
 num_combination=""
+num_combination_2=""
+num_combination_3=""
 
 M=linecache.getline(r'score.txt',1)
 for i in M:
@@ -71,12 +71,25 @@ for i in M:
     if i.isdigit():
         num_11+=i
 
-########## obtain the combination score #########
-combination=linecache.getline(r'./Combination/MethodAdd+MethodRemove.txt',4)
+########## obtain combination score #########
+combination=linecache.getline(r'./Combination/3 kinds combinations/AllLiteralAmplifiers+MethodAdd+MethodGenerator.txt',5)
 for i in combination:
     if i.isdigit():
         num_combination+=i
-count=int(num_combination)
+Bis_1=int(num_combination)
+
+combination=linecache.getline(r'./Combination/3 kinds combinations/AllLiteralAmplifiers+MethodRemove+MethodGenerator.txt',5)
+for i in combination:
+    if i.isdigit():
+        num_combination+=i
+Bis_2=int(num_combination)
+
+combination=linecache.getline(r'./Combination/3 kinds combinations/AllLiteralAmplifiers+ReturnValueAmplifier+NullifierAmplifier.txt',5)
+for i in combination:
+    if i.isdigit():
+        num_combination_3+=i
+Bis_3=int(num_combination_3)
+
 
 ########## make list #########
 list={
@@ -91,20 +104,47 @@ list={
     'CharLiteralAmplifier' : int(num_9),
     'AllLiteralAmplifiers' : int(num_10),
     'NullifierAmplifier' : int(num_11),
-    'yes' : int(num_combination)
 }
 
-#print(list)
 
-comb_1=input("Combination_1: ")
-comb_2=input("Combination_2: ")
-yes=input("Do you want to Calculate [yes/no]：")
-CIS_1=list.get(comb_1)
-CIS_2=list.get(comb_2)
-bis=list.get(yes)
+########## 3 kinds of combinations, split the method amplifier name #########
+with open("./Combination/3 kinds combinations/AllLiteralAmplifiers+MethodAdd+MethodGenerator.txt", "r") as f:
+    data = f.readline()
+
+Method_1,Method_2,Method_3=data.split()
+
+CIS_1=list.get(Method_1)
+CIS_2=list.get(Method_2)
+CIS_3=list.get(Method_3)
+
+with open("./Combination/3 kinds combinations/AllLiteralAmplifiers+MethodRemove+MethodGenerator_report.txt", "r") as f:
+    data = f.readline()
+
+Method_1,Method_2,Method_3=data.split()
+
+CIS_4=list.get(Method_1)
+CIS_5=list.get(Method_2)
+CIS_6=list.get(Method_3)
+
+with open("./Combination/3 kinds combinations/AllLiteralAmplifiers+ReturnValueAmplifier+NullifierAmplifier.txt", "r") as f:
+    data = f.readline()
+
+Method_11,Method_22,Method_33=data.split()
+
+CIS_7=list.get(Method_1)
+CIS_8=list.get(Method_2)
+CIS_9=list.get(Method_3)
+
 
 ########## save the result.txt #########
-doc = open(".//Result/result.txt",'w')
-print("The Combination Improvement Score is ",((bis-(CIS_1+CIS_2)))/2,file=doc)
+doc = open("./Result/3 kinds combination/AllLiteralAmplifiers+MethodAdd+MethodGenerator_result.txt",'w')
+print("AllLiteralAmplifiers+MethodAdd+MethodGenerator CIS Score is",((Bis_1-(CIS_1+CIS_2+CIS_3)))/3,file=doc)
+doc.close()
 
+doc = open("./Result/3 kinds combination/AllLiteralAmplifiers+MethodRemove+MethodGenerator_result.txt",'w')
+print("AllLiteralAmplifiers+MethodAdd+MethodGenerator CIS Score is",((Bis_2-(CIS_4+CIS_5+CIS_6)))/3,file=doc)
+doc.close()
+
+doc = open("./Result/3 kinds combination/AllLiteralAmplifiers+ReturnValueAmplifier+NullifierAmplifier_result.txt",'w')
+print("AllLiteralAmplifiers+ReturnValueAmplifier+NullifierAmplifier CIS Score is",((Bis_3-(CIS_7+CIS_8+CIS_9)))/3,file=doc)
 doc.close()

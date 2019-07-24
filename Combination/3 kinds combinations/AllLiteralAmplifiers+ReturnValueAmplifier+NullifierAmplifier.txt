@@ -1,3 +1,4 @@
+AllLiteralAmplifiers ReturnValueAmplifier NullifierAmplifier
 Test class that has been amplified: org.jsoup.nodes.AttributeTest
 The original test suite kills 330 mutants
 The amplification results with 2 new tests
