@@ -6,11 +6,6 @@ The metric “Combination Improvement Score” CIS is set for evaluating perform
 Simply run the following commands:
 ```bash
 python run.py 
-Combination_1: MethodAdd (Input the Amplifier method name)
-Combination_2: MethodRemove 
-Combination_3: ...
-...
-Do you want to Calculate [yes/no]：yes 
 ```
 ## Result
 
