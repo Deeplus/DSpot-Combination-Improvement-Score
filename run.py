@@ -72,7 +72,7 @@ for i in M:
         num_11+=i
 
 ########## obtain the combination score #########
-combination=linecache.getline(r'/Users/dongzm/PycharmProjects/DSpot_CIS/Combination/MethodAdd+MethodRemove.txt',4)
+combination=linecache.getline(r'./Combination/MethodAdd+MethodRemove.txt',4)
 for i in combination:
     if i.isdigit():
         num_combination+=i
@@ -104,7 +104,7 @@ CIS_2=list.get(comb_2)
 bis=list.get(yes)
 
 ########## save the result.txt #########
-doc = open("/Users/dongzm/PycharmProjects/DSpot_CIS/Result/result.txt",'w')
+doc = open(".//Result/result.txt",'w')
 print("The Combination Improvement Score is ",((bis-(CIS_1+CIS_2)))/2,file=doc)
 
 doc.close()
