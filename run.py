@@ -131,9 +131,9 @@ with open("./Combination/3 kinds combinations/AllLiteralAmplifiers+ReturnValueAm
 
 Method_11,Method_22,Method_33=data.split()
 
-CIS_7=list.get(Method_1)
-CIS_8=list.get(Method_2)
-CIS_9=list.get(Method_3)
+CIS_7=list.get(Method_11)
+CIS_8=list.get(Method_22)
+CIS_9=list.get(Method_33)
 
 
 ########## save the result.txt #########

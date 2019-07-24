@@ -1,1 +1,1 @@
-AllLiteralAmplifiers+ReturnValueAmplifier+NullifierAmplifier CIS Score is -3.6666666666666665
+AllLiteralAmplifiers+ReturnValueAmplifier+NullifierAmplifier CIS Score is -1.6666666666666667
