@@ -1,0 +1,5 @@
+MethodAdd MethodRemove MethodGeneratorAmplifier
+Test class that has been amplified: org.jsoup.nodes.AttributeTest
+The original test suite kills 330 mutants
+The amplification results with 8 new tests
+it kills 9 more mutants
