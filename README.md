@@ -9,4 +9,5 @@ python run.py
 ```
 ## Result
 
-The result data will be saved in the file folder named `Result` as the text format.
+Each record will be saved in the file folder named `Result` as the csv format.
+The result will be saved in the file named `CIS.csv` as the csv format.
